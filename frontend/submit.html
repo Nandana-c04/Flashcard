@@ -122,6 +122,7 @@
 <body>
     <h1>Submit a Flashcard</h1>
     
+<<<<<<< HEAD:frontend/index.html
     <div class="form-container">
         <form id="flashcard-form">
             <label for="title">Topic:</label>
@@ -134,7 +135,22 @@
         </form>
         <button onclick="goToFlashcards()">View Flashcards</button>
     </div>
+=======
+    <form id="flashcard-form">
+        <label for="title">Topic:</label>
+        <input type="text" id="title" required>
+        
+        <label for="explanation">Explanation:</label>
+        <textarea id="explanation" required></textarea>
+        
+        <button type="submit">Submit</button>
+    </form>
+    <button id="logout-btn">Logout</button>
 
-    <script src="js/index.js"></script>
+
+    <button onclick="goToFlashcards()">View  Flashcards</button>
+>>>>>>> 47f37c011b55769ec98ac1747ce7a6648db4f9dc:frontend/submit.html
+
+    <script src="./js/index.js"></script>
 </body>
 </html>
