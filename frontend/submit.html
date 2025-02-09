@@ -15,7 +15,6 @@
     html, body {
         height: 100%;
         width: 100%;
-        
     }
 
     body {
@@ -40,6 +39,7 @@
         text-align: center;
         margin-bottom: 2rem;
         width: 100%;
+        animation: fadeIn 1s ease-out;
     }
 
     .form-container {
@@ -58,7 +58,7 @@
         border-radius: 10px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         width: 100%;
-        
+        animation: fadeIn 1s ease-out;
     }
 
     label {
@@ -84,17 +84,30 @@
         resize: none;
     }
 
+    /* New button container styling */
+    .button-container {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    /* Updated button styling */
     button {
-        background: #ff416c;
+        background: #704021;
         color: white;
         border: none;
         padding: 10px 20px;
-        margin-top: 15px;
         font-size: 1rem;
         cursor: pointer;
         border-radius: 5px;
         transition: 0.3s;
-        width: 100%;
+        animation: fadeIn 1s ease-out;
+    }
+
+    /* Specific styling for form buttons */
+    .form-button {
+        flex: 1;
     }
 
     button:hover {
@@ -102,12 +115,14 @@
         transform: scale(1.05);
     }
 
-    button:last-of-type {
+    /* View Flashcards button */
+    .view-flashcards {
         background: #704021;
+        width: 100%;
         margin-top: 10px;
     }
 
-    button:last-of-type:hover {
+    .view-flashcards:hover {
         background: #a45214;
     }
 
@@ -117,12 +132,23 @@
             max-width: 400px;
         }
     }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
     </style>
 </head>
 <body>
     <h1>Submit a Flashcard</h1>
     
-<<<<<<< HEAD:frontend/index.html
     <div class="form-container">
         <form id="flashcard-form">
             <label for="title">Topic:</label>
@@ -131,26 +157,14 @@
             <label for="explanation">Explanation:</label>
             <textarea id="explanation" required></textarea>
             
-            <button type="submit">Submit</button>
+            <div class="button-container">
+                <button type="submit" class="form-button">Submit</button>
+                <button type="button" id="logout-btn" class="form-button">Logout</button>
+            </div>
         </form>
-        <button onclick="goToFlashcards()">View Flashcards</button>
+        <button onclick="goToFlashcards()" class="view-flashcards">View Flashcards</button>
     </div>
-=======
-    <form id="flashcard-form">
-        <label for="title">Topic:</label>
-        <input type="text" id="title" required>
-        
-        <label for="explanation">Explanation:</label>
-        <textarea id="explanation" required></textarea>
-        
-        <button type="submit">Submit</button>
-    </form>
-    <button id="logout-btn">Logout</button>
 
-
-    <button onclick="goToFlashcards()">View  Flashcards</button>
->>>>>>> 47f37c011b55769ec98ac1747ce7a6648db4f9dc:frontend/submit.html
-
-    <script src="./js/index.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>
